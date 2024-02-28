@@ -1,4 +1,4 @@
 locations:
 - code_source:
-    package_name: quickstart_gcp
+    package_name: nba_stats
   location_name: nba_stats_dagster

@@ -1,0 +1,7 @@
+.env
+**/__pycache__/
+nba_stats.egg-info
+**/data/**
+.DS_Store
+tmp
+gcp_key.json

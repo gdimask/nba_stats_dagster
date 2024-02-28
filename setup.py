@@ -16,6 +16,8 @@ setup(
         "wordcloud",
         "pandas_gbq",
         "google-auth",
+        "nba_api",
+        "gcsfs"
     ],
     extras_require={"dev": ["dagster-webserver", "pytest"]},
 )

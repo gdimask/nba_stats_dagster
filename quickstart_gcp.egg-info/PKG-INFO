@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: quickstart_gcp
+Version: 0.0.0
+Requires-Dist: dagster
+Requires-Dist: dagster-gcp
+Requires-Dist: dagster-gcp-pandas
+Requires-Dist: dagster-cloud
+Requires-Dist: boto3
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: textblob
+Requires-Dist: tweepy
+Requires-Dist: wordcloud
+Requires-Dist: pandas_gbq
+Requires-Dist: google-auth
+Requires-Dist: nba_api
+Requires-Dist: gcsfs
+Provides-Extra: dev
+Requires-Dist: dagster-webserver; extra == "dev"
+Requires-Dist: pytest; extra == "dev"

@@ -5,3 +5,5 @@ nba_stats.egg-info
 .DS_Store
 tmp
 gcp_key.json
+gcp_creds.json
+encoder.py

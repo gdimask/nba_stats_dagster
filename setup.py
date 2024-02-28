@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="quickstart_gcp",
+    name="nba_stats",
     packages=find_packages(exclude=["quickstart_gcp_tests"]),
     install_requires=[
         "dagster",

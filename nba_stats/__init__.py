@@ -8,9 +8,9 @@ import os
 import json
 import base64
 
-AUTH_FILE = "/tmp/gcp_creds.json"
+AUTH_FILE = "gcp_creds.json"
 with open(AUTH_FILE, "w") as f:
-    json.dump(json.loads(base64.b64decode(os.getenv("BIGQUERY_SERVICE_ACCOUNT_CREDENTIALS"))), f)
+    json.dump(json.loads(base64.b64decode(os.getenv("GCP_ENV_B64"))), f)
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = AUTH_FILE
 print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])

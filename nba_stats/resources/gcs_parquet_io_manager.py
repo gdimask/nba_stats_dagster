@@ -10,7 +10,7 @@ import pandas as pd
 class GCSParquetIOManager(IOManager):
     def __init__(self, bucket_name, client=None, prefix='pl_holder') -> None:
         self.bucket_name = _check.str_param(bucket_name, 'bucket_name')
-        self.client = client or storage.Client(project=EnvVar("BIGQUERY_PROJECT_ID"), credentials="gcp_creds.json")
+        self.client = client or storage.Client(project=EnvVar("BIGQUERY_PROJECT_ID"))
         self.bucket_obj = self.client.bucket(bucket_name)
         self.prefix = _check.str_param(prefix, 'prefix')
 

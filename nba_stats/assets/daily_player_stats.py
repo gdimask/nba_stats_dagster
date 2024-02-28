@@ -1,5 +1,5 @@
 from nba_api.stats.endpoints import playergamelogs
-from dagster import asset, op
+from dagster import asset, EnvVar
 from dagster_gcp import BigQueryResource
 from . import constants
 from ..partitions import daily_partition
@@ -15,10 +15,14 @@ def daily_player_stats_file(context):
     date_to_fetch = context.asset_partition_key_for_output()
     season = make_season(date_to_fetch)
     formatted_date = format_date(date_to_fetch)
+    username = EnvVar("PROXY_USERNAME").get_value()
+    password = EnvVar("PROXY_PASSWORD").get_value()
+    proxy =  f"https://{username}:{password}@us.smartproxy.com:10000"
     raw_df = playergamelogs.PlayerGameLogs(
         season_nullable = season,
         date_from_nullable = formatted_date,
-        date_to_nullable = formatted_date
+        date_to_nullable = formatted_date,
+        proxy=proxy
     ).player_game_logs.get_data_frame()
 
     return raw_df
